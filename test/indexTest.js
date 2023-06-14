@@ -41,16 +41,21 @@ describe('employees', function() {
   describe('deleteFromEmployeeByKey(employee, key)', function () {
     it('deletes `key` from a clone of employee and returns the new employee (it is non-destructive)', function () {
       let newEmployee = deleteFromEmployeeByKey(employee, 'name');
-
+      console.log(deleteFromEmployeeByKey(employee, 'name'))
       expect(newEmployee['name']).to.equal(undefined);
       expect(typeof newEmployee).to.equal('object');
+      
     });
+    
 
     it('does not modify the original employee (it is non-destructive)', function () {
       deleteFromEmployeeByKey(employee, 'name');
 
       expect(employee['name']).to.equal('Sam');
+      console.log(employee)
     });
+    
+
   });
 
   describe('destructivelyDeleteFromEmployeeByKey(employee, key)', function () {
